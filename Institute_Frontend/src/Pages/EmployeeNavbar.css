@@ -1,0 +1,151 @@
+/* Base Styles */
+.employee-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-navbar.scrolled {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.employee-navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.employee-logo {
+  display: flex;
+  align-items: center;
+}
+
+.employee-navbar-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.employee-navbar-title:hover {
+  color: #348549; /* Subtle hover effect */
+}
+
+/* Navigation Links Styling */
+.employee-navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.employee-navbar-links li {
+  position: relative;
+}
+
+.employee-navbar-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.employee-navbar-links a:hover {
+  color: #348549;
+}
+
+.employee-navbar-links .logout-btn {
+  background-color: #348549;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.employee-navbar-links .logout-btn:hover {
+  background-color: #2a6d3b;
+}
+
+/* Register Number Styling */
+.navbar-registerNumber {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.register-number-label {
+  font-weight: 600;
+}
+
+.register-number-value {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+/* Logout Section Styling */
+.navbar-logout a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-logout a:hover {
+  color: #348549;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .employee-navbar-links {
+    display: none; /* Hide links on small screens */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Show mobile menu button */
+  }
+
+  /* Add more styles for mobile if needed */
+  .employee-navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .employee-navbar-title {
+    margin-bottom: 15px;
+  }
+
+  .navbar-registerNumber {
+    margin-top: 10px;
+  }
+
+  .navbar-logout {
+    margin-top: 15px;
+  }
+}

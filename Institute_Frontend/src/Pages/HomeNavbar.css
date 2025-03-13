@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles for navbar */
+.home-navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: linear-gradient(to right, #207B57, #458068); /* Dark gradient for initial look */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change navbar background and add shadow when scrolled */
+.home-navbar.scrolled {
+  background: linear-gradient(to right, #207b579d, #458068a1); /* Light background when scrolled */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Centering and setting max-width for navbar content */
+.home-navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Optionally constrain the width for larger screens */
+  margin: 0 auto;
+}
+
+/* Logo styling */
+.home-logo {
+  display: flex;
+  align-items: center;
+}
+
+.home-navbar-title {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff; /* White text for the logo */
+  transition: color 0.3s ease;
+  margin: 0;
+  text-transform:capitalize;
+  cursor: pointer;
+}
+
+/* Logo hover effect */
+.home-navbar-title:hover {
+  color: wheat; /* Tomato red on hover */
+}
+
+/* Navbar links */
+.home-navbar-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.home-navbar-links a {
+  color: #fff; /* White text initially */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+.home-navbar-links a:hover {
+  color: wheat;
+  transform: scale(1.1); /* Slight scale-up on hover */
+}
+
+/* Navbar links visibility transition */
+.home-navbar-links {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Change link color when navbar is scrolled */
+.home-navbar.scrolled .home-navbar-links a {
+  color: white; /* Darker text when scrolled */
+}
+
+/* Hamburger menu for mobile */
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobile-menu-button .hamburger-line {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Off-canvas menu (mobile view) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #207B57;
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: wheat;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 150;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-navbar {
+    padding: 15px 20px;
+  }
+
+  .home-navbar-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-navbar-links {
+    display: none; /* Hide links by default */
+  }
+
+  .home-navbar-links.open {
+    display: flex; /* Show links when menu is open */
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+}
